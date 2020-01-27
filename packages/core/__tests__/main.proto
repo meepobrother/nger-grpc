@@ -12,4 +12,7 @@ message User {
 
 service Demo {
     rpc getUser(GetUser) returns (User);
+    rpc getUser2(stream GetUser) returns (User);
+    rpc getUser3(GetUser) returns (stream User);
+    rpc getUser4(stream GetUser) returns (stream User);
 }

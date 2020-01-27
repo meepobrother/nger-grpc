@@ -3,7 +3,6 @@ import { GrpcMetadataKey, GrpcOptions } from "../decorator";
 import { IClassDecorator } from '@nger/decorator';
 import { GRPC_SERVICES } from "../tokens";
 import { RpcRef } from "./rpcRef";
-
 export const rpcHandler: StaticProvider = {
     provide: GrpcMetadataKey,
     useValue: (
@@ -19,7 +18,7 @@ export const rpcHandler: StaticProvider = {
         const ref = new RpcRef(nger, controllerInjector)
         const options = ctrl.options;
         let name = ctrl.type.name;
-        if(options) name = options.path instanceof InjectionToken ? injector.get(options.path) : options.path;
+        if (options) name = options.path instanceof InjectionToken ? injector.get(options.path) : options.path;
         injector.setStatic([{
             provide: GRPC_SERVICES,
             useValue: {

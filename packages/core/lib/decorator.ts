@@ -26,18 +26,22 @@ export const Grpc = createClassDecorator<GrpcOptions | string | InjectionToken<s
 /**
  * 普通
  */
-export const GrpcMethodMetadataKey = `RpcMethodMetadataKey`
-export interface GrpcMethodOptions { }
-export const GrpcMethod = createMethodDecorator<GrpcMethodOptions>(GrpcMethodMetadataKey)
+export const UnaryCallMetadataKey = `UnaryCallMetadataKey`
+export interface UnaryCallOptions { }
+export const UnaryCall = createMethodDecorator<UnaryCallOptions>(UnaryCallMetadataKey)
 
-export const GrpcStreamMetadataKey = `GrpcStreamMetadataKey`
-export interface GrpcStreamOptions { }
-export const GrpcStream = createParameterDecorator<GrpcStreamOptions>(GrpcStreamMetadataKey)
+export const ClientStreamingCallMetadataKey = `ClientStreamingCallMetadataKey`
+export interface ClientStreamingCallOptions { }
+export const ClientStreamingCall = createMethodDecorator<ClientStreamingCallOptions>(ClientStreamingCallMetadataKey)
 
-export const GrpcArgsMetadataKey = `GrpcArgsMetadataKey`
-export interface GrpcArgsOptions { }
-export const GrpcArgs = createParameterDecorator<GrpcArgsOptions>(GrpcArgsMetadataKey)
+export const ServerStreamingCallMetadataKey = `ServerStreamingCallMetadataKey`;
+export interface ServerStreamingCallOptions{}
+export const ServerStreamingCall = createMethodDecorator<ServerStreamingCallOptions>(ServerStreamingCallMetadataKey)
 
-export const GrpcNextMetadataKey = `GrpcNextMetadataKey`
-export interface GrpcNextOptions { }
-export const GrpcNext = createParameterDecorator<GrpcNextOptions>(GrpcNextMetadataKey)
+export const BidiStreamingCallMetadataKey = `BidiStreamingCallMetadataKey`;
+export interface BidiStreamingCallOptions{}
+export const BidiStreamingCall = createMethodDecorator<BidiStreamingCallOptions>(BidiStreamingCallMetadataKey)
+
+export const ArgsMetadataKey = `@nger/grpc Args`
+export interface ArgsOptions { }
+export const Args = createParameterDecorator<ArgsOptions>(ArgsMetadataKey)
